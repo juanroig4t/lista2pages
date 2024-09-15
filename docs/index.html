@@ -3,119 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista 2 - Página Principal</title>
+    <title>Lista 2 - Tu App de Gestión de Listas</title>
     <style>
+        /* Estilos generales */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
         }
+
+        /* Estilos del encabezado */
         header {
-            background-color: #4CAF50;
+            background-color: #B8751F;
             color: white;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
         }
-        h1 {
-            margin: 0;
+
+        /* Estilos de navegación */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
         }
-        main {
-            margin: 20px;
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            background-color: #B8751F;
+            border-radius: 5px;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
-        .input-section {
-            margin-bottom: 20px;
+
+        /* Sección de presentación */
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
         }
-        .input-section input {
-            padding: 10px;
-            width: 70%;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+
+        .hero h1 {
+            color: #B8751F;
+            font-size: 48px;
         }
-        .input-section button {
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
         }
-        .input-section button:hover {
-            background-color: #45a049;
-        }
-        .list-container {
-            list-style: none;
-            padding: 0;
-        }
-        .list-item {
-            background-color: #f9f9f9;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 5px;
+
+        /* Sección de características */
+        .features {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            align-items: center;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
         }
-        .list-item button {
-            background-color: #ff4d4d;
+
+        .feature {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .feature img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature h2 {
+            color: #333;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .feature p {
+            color: #777;
+            font-size: 16px;
+        }
+
+        /* Estilos de pie de página */
+        footer {
+            background-color: #333;
             color: white;
-            border: none;
-            padding: 7px 10px;
-            border-radius: 5px;
-            cursor: pointer;
+            text-align: center;
+            padding: 20px;
         }
-        .list-item button:hover {
-            background-color: #e63939;
+
+        footer a {
+            color: #B8751F;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+            }
+
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- Encabezado con el título de la app -->
     <header>
-        <h1>Lista 2</h1>
-        <p>Gestor de listas fácil y rápido</p>
+        <h1>Lista 2 - Organiza tu vida de manera eficiente</h1>
     </header>
 
-    <main>
-        <section class="input-section">
-            <input type="text" id="itemInput" placeholder="Agregar un nuevo elemento a la lista">
-            <button onclick="agregarElemento()">Agregar</button>
+    <!-- Navegación principal -->
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#caracteristicas">Características</a>
+        <a href="#capturas">Capturas</a>
+        <a href="politica-privacidad.html">Política de Privacidad</a>
+        <a href="#quienes-somos">Quiénes Somos</a>
+    </nav>
+
+    <!-- Contenedor principal de la página -->
+    <div class="container">
+
+        <!-- Sección de bienvenida -->
+        <section class="hero" id="inicio">
+            <h1>Bienvenido a Lista 2</h1>
+            <p>Con Lista 2, gestionar tus listas nunca ha sido tan fácil. Mantén tus tareas, compras o cualquier cosa importante organizada de manera sencilla y local en tu dispositivo.</p>
         </section>
 
-        <ul id="lista" class="list-container">
-            <!-- Los elementos de la lista se mostrarán aquí -->
-        </ul>
-    </main>
+        <!-- Sección de características -->
+        <section class="features" id="caracteristicas">
+            <div class="feature">
+                <img src="https://via.placeholder.com/300x200" alt="Gestión de listas">
+                <h2>Gestión de Listas</h2>
+                <p>Crea y organiza múltiples listas para diferentes necesidades.</p>
+            </div>
+            <div class="feature">
+                <img src="https://via.placeholder.com/300x200" alt="Funcionalidad Offline">
+                <h2>Funcionalidad Offline</h2>
+                <p>Usa la aplicación en modo offline, manteniendo tus datos seguros y privados en tu dispositivo.</p>
+            </div>
+            <div class="feature">
+                <img src="https://via.placeholder.com/300x200" alt="Sincronización Local">
+                <h2>Almacenamiento Local</h2>
+                <p>Todos tus datos permanecen en tu dispositivo, sin necesidad de conexión a internet.</p>
+            </div>
+        </section>
 
-    <script>
-        function agregarElemento() {
-            var input = document.getElementById("itemInput").value;
-            if (input === "") {
-                alert("Por favor, ingresa un elemento.");
-                return;
-            }
-            
-            var lista = document.getElementById("lista");
-            var nuevoElemento = document.createElement("li");
-            nuevoElemento.classList.add("list-item");
+        <!-- Sección de capturas -->
+        <section id="capturas">
+            <h2 style="text-align:center; color: #B8751F;">Capturas de Pantalla</h2>
+            <div class="features">
+                <div class="feature">
+                    <img src="https://via.placeholder.com/300x500" alt="Captura 1">
+                    <p>Pantalla principal de la aplicación.</p>
+                </div>
+                <div class="feature">
+                    <img src="https://via.placeholder.com/300x500" alt="Captura 2">
+                    <p>Creación de nuevas listas.</p>
+                </div>
+                <div class="feature">
+                    <img src="https://via.placeholder.com/300x500" alt="Captura 3">
+                    <p>Modo de edición de elementos.</p>
+                </div>
+            </div>
+        </section>
 
-            nuevoElemento.innerHTML = `
-                ${input}
-                <button onclick="eliminarElemento(this)">Eliminar</button>
-            `;
+    </div>
 
-            lista.appendChild(nuevoElemento);
-            document.getElementById("itemInput").value = "";
-        }
+    <!-- Pie de página con información adicional -->
+    <footer id="quienes-somos">
+        <p>&copy; 2024 Lista 2 - Todos los derechos reservados.</p>
+        <p><a href="politica-privacidad.html">Política de Privacidad</a> | <a href="quienes-somos.html">Quiénes Somos</a></p>
+    </footer>
 
-        function eliminarElemento(boton) {
-            var elemento = boton.parentNode;
-            elemento.remove();
-        }
-    </script>
 </body>
 </html>
